@@ -1,0 +1,131 @@
+/opt/setport/main
+cat usage_en.txt
+0
+
+/opt/setport/main -h
+cat usage_en.txt
+0
+
+/opt/setport/main --help
+cat usage_en.txt
+0
+
+/opt/setport/main -?
+cat usage_en.txt
+0
+
+/opt/setport/main -!
+sed -n 12p strings_en.txt
+0
+
+/opt/setport/main -v
+echo 3
+0
+
+/opt/setport/main --version
+echo 3
+0
+
+/opt/setport/main -p 8080
+sed -n 13p strings_en.txt | sed 's/{0}/8080/'
+0
+
+/opt/setport/main --port 8080
+sed -n 13p strings_en.txt | sed 's/{0}/8080/'
+0
+
+env PORT="25" /opt/setport/main -p -e
+sed -n 13p strings_en.txt | sed 's/{0}/25/'
+0
+
+env STARBOARD="250" /opt/setport/main -p -e STARBOARD
+sed -n 13p strings_en.txt | sed 's/{0}/250/'
+0
+
+/opt/setport/main help
+{ sed -n 10p strings_en.txt | sed 's/{0}/help/'; cat usage_en.txt; }
+1
+
+/opt/setport/main -help
+{ sed -n 10p strings_en.txt | sed 's/{0}/-help/'; cat usage_en.txt; }
+1
+
+/opt/setport/main --h
+{ sed -n 10p strings_en.txt | sed 's/{0}/--h/'; cat usage_en.txt; }
+1
+
+/opt/setport/main -h --help
+{ sed -n 1p strings_en.txt; cat usage_en.txt; }
+1
+
+/opt/setport/main -hs
+{ sed -n 10p strings_en.txt | sed 's/{0}/-hs/'; cat usage_en.txt; }
+1
+
+/opt/setport/main -p --port 9
+{ sed -n 5p strings_en.txt | sed 's/{0}/--port/'; cat usage_en.txt; }
+1
+
+/opt/setport/main -p 77 33
+{ sed -n 6p strings_en.txt; cat usage_en.txt; }
+1
+
+/opt/setport/main -p -21
+{ sed -n 5p strings_en.txt | sed 's/{0}/-21/'; cat usage_en.txt; }
+1
+
+/opt/setport/main -p 0
+{ sed -n 5p strings_en.txt | sed 's/{0}/0/'; cat usage_en.txt; }
+1
+
+/opt/setport/main --port
+{ sed -n 4p strings_en.txt; cat usage_en.txt; }
+1
+
+/opt/setport/main -p 90642
+{ sed -n 5p strings_en.txt | sed 's/{0}/90642/'; cat usage_en.txt; }
+1
+
+/opt/setport/main -x 45321
+{ sed -n 10p strings_en.txt | sed 's/{0}/-x/'; cat usage_en.txt; }
+1
+
+/opt/setport/main -P 714
+{ sed -n 10p strings_en.txt | sed 's/{0}/-P/'; cat usage_en.txt; }
+1
+
+/opt/setport/main -p -e A_VARIABLE_THAT_DOESNT_EXIST
+{ sed -n 8p strings_en.txt | sed 's/{0}/A_VARIABLE_THAT_DOESNT_EXIST/'; cat usage_en.txt; }
+1
+
+env IP="127.0.0.1" /opt/setport/main -p -e IP
+{ sed -n 9p strings_en.txt | sed 's/{0}/127.0.0.1/'; cat usage_en.txt; }
+1
+
+/opt/setport/main -p 10295612093581723049182356102938479821651098
+{ sed -n 5p strings_en.txt | sed 's/{0}/10295612093581723049182356102938479821651098/'; cat usage_en.txt; }
+1
+
+env LANGUAGE="es" /opt/setport/main --help
+cat usage_es.txt
+0
+
+env LANGUAGE="" LC_ALL="es.UTF-8" /opt/setport/main -p 8080
+sed -n 13p strings_es.txt | sed 's/{0}/8080/'
+0
+
+env STARBOARD="250" LANGUAGE="" LC_ALL="C" LC_MESSAGES="es_FR" /opt/setport/main -p -e STARBOARD
+sed -n 13p strings_es.txt | sed 's/{0}/250/'
+0
+
+env LANGUAGE="" LC_ALL="C" LC_MESSAGES="C.UTF-8" LANG="es_NZ.UTF-8" /opt/setport/main -help
+{ sed -n 10p strings_es.txt | sed 's/{0}/-help/'; cat usage_es.txt; }
+1
+
+env LANGUAGE="e1" LC_ALL="english" LC_MESSAGES="en_USA" LANG="EN" /opt/setport/main
+{ echo "Error: Could not determine locale; using default: en"; cat usage_en.txt; }
+0
+
+env LANGUAGE="en_us" LC_ALL="animal crackers" LC_MESSAGES="en_jamaica" LANG="zz_ZZ.UTF-8" /opt/setport/main
+{ echo "'zz' language files not found; using 'en'"; cat usage_en.txt; }
+0

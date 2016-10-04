@@ -1,0 +1,28 @@
+Uso: SETPORT [bandera] [puerto]
+     SETPORT [bandera] [puerto] [-e [ENV_VAR_NAME]]
+Escucha a un puerto determinado.
+Si no se dan parámetros, muestra el uso de esta página.
+
+  -h, --help      muestra esta página de uso; parámetros adicionales son
+                  no se admiten con esta bandera
+  -p, --port      establece el puerto propuesta por el parámetro siguiente;
+                  el puerto debe ser un número entero en [1, 65535];
+                  sólo se permite un parámetro del puerto;
+                  alternativamente, el indicador -e puede usarse
+                  en lugar de un número de puerto
+  -v, --version   muestra información de la versión
+  -e              se vende a un número de puerto de un entorno
+                  variable en lugar de pasarlo como una
+                  parámetro; puerto se toma de PORT
+                  variable de entorno a menos que otro nombre es
+                  especificada después de que el indicador -e
+  -?              un alias para -h
+  -!              muestras sobre la página
+  
+Ejemplos:
+  SETPORT -p 4040            conjuntos de puertos 4040
+  SETPORT -p -e              conjuntos de puertos en el entorno del puerto
+                             variable
+  SETPORT -p -e ESTRIBOR     conjuntos de puertos en el entorno ESTRIBOR
+                             variable
+

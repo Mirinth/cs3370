@@ -1,0 +1,13 @@
+Error: -h, --help, y -? banderas toman ningún parámetro
+de error: -! bandera no toma ningún parámetro
+de error: -v --version y banderas toman ningún parámetro
+de error: -p y --port banderas requieren número de puerto o indicador -e
+Error: puerto '{0}' no en [1, 56635]
+Error: -p y --port sin -e sólo toma un parámetro
+Error: -p -e -e --port y sólo toma un parámetro
+Error: variable de entorno '{0}' no existe
+Error: variable de entorno contiene puerto no válido '{0}'; puerto debe estar en [1, 56635]
+Error: pabellón desconocido '{0}' encontró
+de error: Se ha producido un error desconocido
+utilidad SETPORT
+escucha en el puerto {0}

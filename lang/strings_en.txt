@@ -1,0 +1,13 @@
+error: -h, --help, and -? flags take no parameters
+error: -! flag takes no parameters
+error: -v and --version flags take no parameters
+error: -p and --port flags require port number or -e flag
+error: port '{0}' not in [1, 56635]
+error: -p and --port without -e only takes one parameter
+error: -p -e and --port -e only takes one parameter
+error: environment variable '{0}' does not exist
+error: environment variable contains invalid port '{0}'; port must be in [1, 56635]
+error: unknown flag '{0}' encountered
+error: an unknown error occurred
+setport utility
+listening on port {0}

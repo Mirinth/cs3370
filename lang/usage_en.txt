@@ -1,0 +1,28 @@
+Usage: setport [flag] [port]
+       setport [flag] [port] [-e [ENV_VAR_NAME]]
+Listens to a given port.
+If no parameters are given, shows this usage page.
+
+  -h, --help      shows this usage page; extra parameters are
+                  not allowed with this flag
+  -p, --port      sets the port given by the next parameter;
+                  the port must be an integer in [1, 65535];
+                  only one port parameter is allowed;
+                  alternatively, the -e flag may be used
+                  in place of a port number
+  -v, --version	  displays version information
+  -e              fetches a port number from an environment
+                  variable instead of passing it as a
+                  parameter; port is taken from PORT
+                  environment variable unless another name is
+                  specified after the -e flag
+  -?              an alias for -h
+  -!              displays about page
+  
+Examples:
+  setport -p 4040            sets port 4040
+  setport -p -e              sets port in PORT environment
+                             variable
+  setport -p -e STARBOARD    sets port in STARBOARD environment
+                             variable
+
