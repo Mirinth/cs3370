@@ -8,6 +8,20 @@
 - Run `sudo make` to install
 - Close and reopen the terminal to load the changes
 - You can now remove or archive the extracted files
+- (optional) Set your language (see below) (may get errors if you don't)
+- (optional) Run `/opt/setport/testing/tester` to run the tests (may fail if above step not done)
+
+
+## Setting the language
+The tool checks the following environment variables to decide which language to use:
+- LANGUAGE
+- LC_ALL
+- LC_MESSAGES
+- LANG
+
+The first variable that contains a valid locale will decide which language the tool will use. If your system already has one set correctly, then the tool will use that without issue. If none are set though, you may see an error and the tool will default to English.
+
+To override the default language (and/or suppress the error message) select one of the variables and use the `export` command line utility to set it. Examples: `export LANGUAGE="en"` or `export LC_ALL="es_MX"`
 
 
 ## Use
