@@ -4,7 +4,7 @@ all:
 	make shellAlias
 
 lang:
-	sudo mkdir /opt/setport
+	sudo mkdir -p /opt/setport
 	sudo cp -r lang /opt/setport/lang
 	sudo chmod -R a=rX /opt/setport/lang
 
@@ -19,8 +19,4 @@ tester: tester.cpp
 	sudo mkdir /opt/setport/testing
 	sudo g++ -Wall -std=c++11 tester.cpp -o /opt/setport/testing/tester
 	sudo cp tests.txt /opt/setport/testing/tests.txt
-
-
-
-
 
