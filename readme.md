@@ -28,12 +28,10 @@ The tester isn't bult by default. To install it:
 Type `/opt/setport/testing/tester` in the terminal to run the tests.
 
 
-
 ## Alternate languages
 The tool can be run in multiple languages. It checks the environment variables `LANGUAGE`, `LC_ALL`, `LC_MESSAGES` and `LANG` (in that order) for a valid locale (e.g. `en_US` or `es`), extracts the language and loads the appropriate language files based on the result. By setting the value of these variables (e.g. by entering `export LANGUAGE="en"` in a terminal), the tool's language can be changed.
 
 If none of these variables contains a valid locale, the tool will print an error message and default to English. To override the default language (and/or suppress the error message) select one of the variables and use the `export` command line utility to set it. Examples: `export LANGUAGE="en"` or `export LC_ALL="es_MX"`
-
 
 
 ## Translating
