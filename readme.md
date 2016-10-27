@@ -8,20 +8,8 @@
 - Run `sudo make` to install
 - Close and reopen the terminal to load the changes
 - You can now remove or archive the extracted files
-- (optional) Set your language (see below) (may get errors if you don't)
+- (optional) Set your language (see `Alternate languages` section) (may get errors if you don't)
 - (optional) Run `/opt/setport/testing/tester` to run the tests (may fail if above step not done)
-
-
-## Setting the language
-The tool checks the following environment variables to decide which language to use:
-- LANGUAGE
-- LC_ALL
-- LC_MESSAGES
-- LANG
-
-The first variable that contains a valid locale will decide which language the tool will use. If your system already has one set correctly, then the tool will use that without issue. If none are set though, you may see an error and the tool will default to English.
-
-To override the default language (and/or suppress the error message) select one of the variables and use the `export` command line utility to set it. Examples: `export LANGUAGE="en"` or `export LC_ALL="es_MX"`
 
 
 ## Use
@@ -40,8 +28,12 @@ The tester isn't bult by default. To install it:
 Type `/opt/setport/testing/tester` in the terminal to run the tests.
 
 
+
 ## Alternate languages
-The tool can be run in multiple languages. It checks the environment variables `LANGUAGE`, `LC_ALL`, `LC_MESSAGES` and `LANG` (in that order) for a valid locale (e.g. `en_US` or `es`), extracts the language and loads the appropriate language files based on the result. By setting the value of these variables, the tool's language can be changed.
+The tool can be run in multiple languages. It checks the environment variables `LANGUAGE`, `LC_ALL`, `LC_MESSAGES` and `LANG` (in that order) for a valid locale (e.g. `en_US` or `es`), extracts the language and loads the appropriate language files based on the result. By setting the value of these variables (e.g. by entering `export LANGUAGE="en"` in a terminal), the tool's language can be changed.
+
+If none of these variables contains a valid locale, the tool will print an error message and default to English. To override the default language (and/or suppress the error message) select one of the variables and use the `export` command line utility to set it. Examples: `export LANGUAGE="en"` or `export LC_ALL="es_MX"`
+
 
 
 ## Translating

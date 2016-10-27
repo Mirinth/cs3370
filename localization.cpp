@@ -54,7 +54,7 @@ void localization::getLanguage() {
 		}
 	}
 
-	cout << "Error: Could not determine locale; using default: en" << endl;
+	cout << "Error: bad locale; using en; see `Alternate languages` in readme" << endl;
 	language = "en";
 }
 
