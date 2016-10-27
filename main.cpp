@@ -40,7 +40,7 @@ int main(int argc, char* args[]) {
 		return handleHelpFlag(dArgs, loc);
 	}
 
-	if (flag == "-!") {
+	if (flag == "-!" || flag == "--about") {
 		return handleAboutFlag(dArgs, loc);
 	}
 

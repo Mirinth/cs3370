@@ -18,6 +18,10 @@ cat usage_en.txt
 sed -n 12p strings_en.txt
 0
 
+/opt/setport/main --about
+sed -n 12p strings_en.txt
+0
+
 /opt/setport/main -v
 echo 3
 0
