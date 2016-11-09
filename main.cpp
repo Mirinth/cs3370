@@ -105,7 +105,7 @@ int handlePortFlag(deque<string> args, localization& loc) {
 	string port = args.front();
 	args.pop_front();
 
-	if (port == "-e") { return handleEnvPort(args, loc); }
+	if (port == "-e" || port == "--environment") { return handleEnvPort(args, loc); }
 	if (isPort(port) == false) {
 		loc.error(ILLEGAL_PORT, port);
 		return 1;
